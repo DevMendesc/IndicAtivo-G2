@@ -17,6 +17,6 @@ UML - https://app.diagrams.net
 
 Desenvolvedores:
 
- [<img src="https://avatars.githubusercontent.com/u/93719802?v=4" width=115>](https://github.com/deborapaiva)  [<img src="https://avatars.githubusercontent.com/u/108030855?v=4" width=115>](https://github.com/riziaraquelbra)  [<img src="https://avatars.githubusercontent.com/u/84872496?v=4" width=115>](https://github.com/ThiagoCamelo1999)  [<img src="###" width=115>](https://github.com/###) |
+ [<img src="https://avatars.githubusercontent.com/u/93719802?v=4" width=115>](https://github.com/deborapaiva)  [<img src="https://avatars.githubusercontent.com/u/108030855?v=4" width=115>](https://github.com/riziaraquelbra)  [<img src="https://avatars.githubusercontent.com/u/84872496?v=4" width=115>](https://github.com/ThiagoCamelo1999)  [<img src="https://avatars.githubusercontent.com/u/97401294?v=4" width=115>](https://github.com/Devmendesc) |
 
 

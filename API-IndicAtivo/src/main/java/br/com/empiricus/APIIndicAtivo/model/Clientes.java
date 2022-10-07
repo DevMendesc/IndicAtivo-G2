@@ -12,7 +12,7 @@ import javax.persistence.*;
 @Table(name = "cadastros")
 @AllArgsConstructor
 @NoArgsConstructor
-public class Cadastro {
+public class Clientes {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,5 +29,8 @@ public class Cadastro {
 
     @NotNull
     private String celular;
+
+    @NotNull
+    private String senha;
 
 }

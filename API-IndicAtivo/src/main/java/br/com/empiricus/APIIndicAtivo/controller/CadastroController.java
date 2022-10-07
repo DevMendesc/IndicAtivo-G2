@@ -1,6 +1,6 @@
 package br.com.empiricus.APIIndicAtivo.controller;
 
-import br.com.empiricus.APIIndicAtivo.model.Cadastro;
+import br.com.empiricus.APIIndicAtivo.model.Clientes;
 import br.com.empiricus.APIIndicAtivo.repository.CadastroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,12 +17,12 @@ public class CadastroController {
     private CadastroRepository repository;
 
     @GetMapping
-    public ResponseEntity <List<Cadastro>> GetAll() {
+    public ResponseEntity <List<Clientes>> GetAll() {
         return ResponseEntity.ok(repository.findAll());
     }
 
     @PostMapping
-    public ResponseEntity<Cadastro> post(@RequestBody Cadastro cadastro) {
+    public ResponseEntity<Clientes> post(@RequestBody Clientes cadastro) {
         return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(cadastro));
     }
 

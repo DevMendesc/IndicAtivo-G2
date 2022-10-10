@@ -1,10 +1,10 @@
-package br.com.empiricus.APIIndicAtivo;
+package br.com.empiricus;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ApiIndicAtivoApplicationTests {
+class ProjetoRestFulApplicationTests {
 
 	@Test
 	void contextLoads() {

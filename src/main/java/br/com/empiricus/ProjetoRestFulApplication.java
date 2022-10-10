@@ -1,13 +1,13 @@
-package br.com.empiricus.APIIndicAtivo;
+package br.com.empiricus;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ApiIndicAtivoApplication {
+public class ProjetoRestFulApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ApiIndicAtivoApplication.class, args);
+		SpringApplication.run(ProjetoRestFulApplication.class, args);
 	}
 
 }

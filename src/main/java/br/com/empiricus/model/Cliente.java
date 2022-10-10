@@ -1,32 +1,38 @@
 package br.com.empiricus.model;
 //BY THIAGOSILVA
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
+import com.sun.istack.NotNull;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Data
 @Entity
 @Table(name="clientes")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Cliente {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	@Column(name = "nome", nullable = false )
-	private String Nome;
-	
-	@Column(name = "sobreNome")
-	private String SobreNome;
-	
+
+	@NotNull
+	@Column(unique = true)
+	private String cnpj;
+
+	@NotNull
+	private String nome;
+
+	@NotNull
+	private String sobrenome;
+
+	@NotNull
 	private String email;
-	
-	
+
 	
 
 }

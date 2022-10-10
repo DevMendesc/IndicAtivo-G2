@@ -7,6 +7,7 @@ import br.com.empiricus.springboot.exception.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Service
 @Transactional
@@ -31,12 +32,19 @@ public class AtivosServiceImpl implements AtivosService {
         return ativosRepository.findAll();
     }
 
+    @Override
+    public List<Ativos> getAtivosByNome(String nome) {
+        return ativosRepository.findByNomeContainingIgnoreCase(nome);
+    }
+
 
     @Override
     public Ativos getAtivosById(long id) {
         return ativosRepository.findById(id).orElseThrow(() ->
                 new ResourceNotFoundException("Ativos", "Id", id));
     }
+
+
 
 
     @Override

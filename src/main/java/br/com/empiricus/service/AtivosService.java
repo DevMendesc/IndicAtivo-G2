@@ -7,9 +7,11 @@ import java.util.List;
 
 public interface AtivosService {
 
-    Ativos saveAtivos(Ativos ativos);//METODO  POST
-    List<Ativos> getAllAtivos(); //METODO GET ALL (PESQUISA TODA TABELO)
-    Ativos getAtivosById(long id); //METODO GET POR ID
-    Ativos updateAtivos(Ativos cliente, long id); //METODO PUT
-    void deleteAtivos(long id); //METODO DELETE
+
+    List<Ativos> getAllAtivos();
+    List<Ativos> getAtivosByNome(String nome);
+    Ativos getAtivosById(long id);
+    Ativos saveAtivos(Ativos ativos);
+    Ativos updateAtivos(Ativos cliente, long id);
+    void deleteAtivos(long id);
 }

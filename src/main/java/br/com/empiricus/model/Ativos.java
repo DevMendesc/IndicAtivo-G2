@@ -14,12 +14,13 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 public class Ativos {
 
+    @ManyToOne
+    private Cliente cliente;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
-    private Long idCliente;
 
     @NotNull
     private String nome;

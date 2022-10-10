@@ -3,7 +3,6 @@ package br.com.empiricus.controller;
 
 import br.com.empiricus.model.Ativos;
 import br.com.empiricus.service.AtivosService;
-import br.com.empiricus.service.ClienteService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/Ativos")
+@RequestMapping ("/Ativos")
 public class AtivosController {
 
     private AtivosService ativosService;
@@ -26,9 +25,16 @@ public class AtivosController {
         return ativosService.getAllAtivos();
     }
 
+
     @GetMapping("{id}")
-    public ResponseEntity<Ativos> getAtivosById(@PathVariable("id") long ativosId){
+    public ResponseEntity<Ativos> getAtivosById(@PathVariable long ativosId){
         return new ResponseEntity<Ativos>(ativosService.getAtivosById(ativosId), HttpStatus.OK);
+    }
+
+
+    @GetMapping("/nomes/{nome}")
+    public ResponseEntity<List<Ativos>> getAtivosByNome(@PathVariable("nome") String nome) {
+        return ResponseEntity.ok(ativosService.getAtivosByNome(nome));
     }
 
     @PostMapping()

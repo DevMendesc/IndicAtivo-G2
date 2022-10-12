@@ -24,10 +24,16 @@ public class Ativos {
 
     @NotNull
     private String nome;
-
     @NotNull
-    private Double lucro;
-
+    private Double lucroPorAcao;
+    @NotNull
+    private Double dividaTotal;
+    @NotNull
+    private Double caixaEEquivalentes;
+    @NotNull
+    private Double receitaLiquida;
+    @NotNull
+    private Double lucroLiquido;
     @NotNull
     private Double acoesTotais;
     @NotNull
@@ -37,6 +43,8 @@ public class Ativos {
     @NotNull
     private Double valorPatrimonialPorAcao;
     @NotNull
+    private Double patrimonioLiquido;
+    @NotNull
     private Double impostos;
     @NotNull
     private Double taxasJuros;
@@ -44,7 +52,6 @@ public class Ativos {
     private Double depreciacao;
     @NotNull
     private Double amortizacao;
-
     @NotNull
-    private Double dividendos;
+    private Double dividendo;
 }

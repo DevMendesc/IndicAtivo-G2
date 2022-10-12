@@ -54,4 +54,6 @@ public class Ativos {
     private Double amortizacao;
     @NotNull
     private Double dividendo;
+    
+    
 }

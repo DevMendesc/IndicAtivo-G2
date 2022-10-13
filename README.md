@@ -1,4 +1,5 @@
-IndicAtivo G7
+
+![Indicativo](https://user-images.githubusercontent.com/93719802/195474378-0bc6ea31-6956-4318-8ade-27a0c0f322d8.png)
 
 Frase para associar ao logo
 

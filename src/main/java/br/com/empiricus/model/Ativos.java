@@ -35,6 +35,8 @@ public class Ativos {
     @NotNull
     private Double lucroLiquido;
     @NotNull
+    private Double lucroOperacionalLiquido;
+    @NotNull
     private Double acoesTotais;
     @NotNull
     private Double cotacaoAcao;
@@ -47,7 +49,7 @@ public class Ativos {
     @NotNull
     private Double impostos;
     @NotNull
-    private Double taxasJuros;
+    private Double juros;
     @NotNull
     private Double depreciacao;
     @NotNull

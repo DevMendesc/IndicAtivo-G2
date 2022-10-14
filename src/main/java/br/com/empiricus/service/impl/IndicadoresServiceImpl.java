@@ -56,7 +56,9 @@ public class IndicadoresServiceImpl implements IndicadoresService {
         existingindicadores.setNome(indicadores.getNome());
         existingindicadores.setPlResult(indicadores.getPlResult());
         existingindicadores.setRoeResult(indicadores.getRoeResult());
-        existingindicadores.setPvpResult(indicadores.getPvpResult());
+        existingindicadores.setPvpaResult(indicadores.getPvpaResult());
+        existingindicadores.setEvResult(indicadores.getEvResult());
+        existingindicadores.setEbitdaResult(indicadores.getEbitdaResult());
         existingindicadores.setEvebitdaResult(indicadores.getEvebitdaResult());
         existingindicadores.setDividendYieldResult(indicadores.getDividendYieldResult());
         existingindicadores.setLpaResult(indicadores.getLpaResult());

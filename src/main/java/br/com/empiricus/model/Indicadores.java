@@ -44,7 +44,13 @@ public class Indicadores extends CalculaIndicadores {
     private Double roeResult;
     
     @NotNull
-    private Double pvpResult;
+    private Double pvpaResult;
+   
+    @NotNull
+    private Double evResult;
+   
+    @NotNull
+    private Double ebitdaResult;
     
     @NotNull
     private Double evebitdaResult;

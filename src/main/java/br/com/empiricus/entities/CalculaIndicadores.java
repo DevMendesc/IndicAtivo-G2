@@ -10,23 +10,33 @@ public class CalculaIndicadores extends Ativos {
 	}
 
 	public void roeResult(double roe) {
-		double roe = getLucroLiquido() / getPatrimonioLiquido() * 100;
+		double roe = (getLucroLiquido() / getPatrimonioLiquido()) * 100;
 		//private Double roe = (lucroLiquido / patrimonioLiquido) x 100;
 	}
 	
-	public void pvpResult(double pvp) {
-		double pvp = getPrecoAcao() / getValorPatrimonialPorAcao();
+	public void pvpaResult(double pvpa) {
+		double pvpa = getPrecoAcao() / getValorPatrimonialPorAcao();
 		//private Double pvp = precoAcao / valorPatrimonialPorAcao;
 	}
 	
+	public void evResult(double ev) {
+		double ev = (getCotacaoAcao() * getAcoesTotais()) + getDividaTotal() – getCaixaEEquivalentes();
+		//private Double ev = (cotacaoAcao*acoesTotais) + dividaTotal – CaixaEEquivalentes;
+	}	
+	
+	public void ebitdaResult(double ebitda) {
+		double ebitda =  getLucroOperacionalLiquido + getJuros() + getImpostos() + getDepreciacao() + getAmortização();
+		//private Double ebitda = Lucro operacional líquido + Juros + Impostos + Depreciação + Amortização;
+	}
+	
 	public void evebitdaResult(double evebitda) {
-		double evebitda = (getCotacaoAcao() * getAcoesTotais()) + getDividaTotal() – getCaixaEEquivalentes();
-		//private Double evebitda = (cotacaoAcao*acoesTotais) + dividaTotal – CaixaEEquivalentes;
+		double evebitda = (getCotacaoAcao() * getAcoesTotais()) + getDividaTotal() – getCaixaEEquivalentes()/getLucroOperacionalLiquido + getJuros() + getImpostos() + getDepreciacao() + getAmortização();
+		//private Double evebitda = (cotacaoAcao*acoesTotais) + dividaTotal – CaixaEEquivalentes/Lucro operacional líquido + Juros + Impostos + Depreciação + Amortização;
 	}
 
 	public void dividendYieldResult(double dividendYield) {
-		double dividendYield = getDividendo() / getPprecoAcao();
-		//private Double dividendYield = dividendo / precoAcao;
+		double dividendYield = (getDividendo() / getPprecoAcao())*100;
+		//private Double dividendYield = (dividendo / precoAcao) *100;
 	}
 	
 	public void lpaResult(double lpa) {
@@ -38,6 +48,5 @@ public class CalculaIndicadores extends Ativos {
 		double margemLiquida = getLucroLiquido() / getReceitaLiquida()*100;
 		//private Double margemLiquida = (lucroLiquido / receitaLiquida) * 100;
 	}	
-		
 	
 }

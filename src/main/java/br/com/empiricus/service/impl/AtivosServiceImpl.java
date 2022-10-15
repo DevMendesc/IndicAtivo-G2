@@ -54,16 +54,22 @@ public class AtivosServiceImpl implements AtivosService {
                 () -> new ResourceNotFoundException("Ativos", "Id", id));
 
         existingAtivos.setNome(ativos.getNome());
-        existingAtivos.setLucro(ativos.getLucro());
+        existingAtivos.setLucroPorAcao(ativos.getLucroPorAcao());
+        existingAtivos.setDividaTotal(ativos.getDividaTotal());
+        existingAtivos.setCaixaEEquivalentes(ativos.getCaixaEEquivalentes());
+        existingAtivos.setReceitaLiquida(ativos.getReceitaLiquida());
+        existingAtivos.setLucroLiquido(ativos.getLucroLiquido());
+        existingAtivos.setLucroOperacionalLiquido(ativos.getLucroOperacionalLiquido());
         existingAtivos.setAcoesTotais(ativos.getAcoesTotais());
         existingAtivos.setCotacaoAcao(ativos.getCotacaoAcao());
         existingAtivos.setPrecoAcao(ativos.getPrecoAcao());
         existingAtivos.setValorPatrimonialPorAcao(ativos.getValorPatrimonialPorAcao());
+        existingAtivos.setPatrimonioLiquido(ativos.getPatrimonioLiquido());
         existingAtivos.setImpostos(ativos.getImpostos());
-        existingAtivos.setTaxasJuros(ativos.getTaxasJuros());
+        existingAtivos.setJuros(ativos.getJuros());
         existingAtivos.setDepreciacao(ativos.getDepreciacao());
         existingAtivos.setAmortizacao(ativos.getAmortizacao());
-        existingAtivos.setDividendos(ativos.getDividendos());
+        existingAtivos.setDividendo(ativos.getDividendo());
 
 
         ativosRepository.save(existingAtivos);

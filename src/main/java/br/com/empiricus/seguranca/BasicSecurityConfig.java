@@ -36,13 +36,13 @@ public class BasicSecurityConfig {
 		
 		
 		
-		http.authorizeHttpRequests((auth) -> auth
-				.antMatchers("/usuarios/logar/cpf").permitAll()
-				.antMatchers("/usuarios/cadastrar/cpf").permitAll()
-				.antMatchers("/usuarios/logar/cnpj").permitAll()
-				.antMatchers("/usuarios/cadastrar/cnpj").permitAll()
-				.antMatchers(HttpMethod.OPTIONS).permitAll()
-				.anyRequest().authenticated()).httpBasic();
+//		http.authorizeHttpRequests((auth) -> auth
+//				.antMatchers("/usuarios/logar/cpf").permitAll()
+//				.antMatchers("/usuarios/cadastrar/cpf").permitAll()
+//				.antMatchers("/usuarios/logar/cnpj").permitAll()
+//				.antMatchers("/usuarios/cadastrar/cnpj").permitAll()
+//				.antMatchers(HttpMethod.OPTIONS).permitAll()
+//				.anyRequest().authenticated()).httpBasic();
 		
 	return http.build();
 	}

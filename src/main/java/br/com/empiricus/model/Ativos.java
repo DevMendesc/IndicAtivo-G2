@@ -1,5 +1,8 @@
 package br.com.empiricus.model;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,8 +17,6 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 public class Ativos {
 
-    @ManyToOne
-    private Cliente cliente;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -56,6 +57,14 @@ public class Ativos {
     private Double amortizacao;
     @NotNull
     private Double dividendo;
+
+    @ManyToOne
+    @JsonIgnoreProperties("ativos")
+    private ClientePJ clientePJ;
+
+    @JsonProperty("clientePJ") private void unpackNested(Long clientePJId) {
+        this.clientePJ = new ClientePJ(); clientePJ.setId(clientePJId);
+    }
     
     
 }

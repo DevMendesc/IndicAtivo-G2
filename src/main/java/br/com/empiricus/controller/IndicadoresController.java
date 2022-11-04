@@ -3,6 +3,8 @@ package br.com.empiricus.controller;
 
 import java.util.List;
 
+import br.com.empiricus.model.Indicadores;
+import br.com.empiricus.service.IndicadoresService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -14,34 +16,33 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.empiricus.service.IndicadoresService;
 
 @RestController
 @RequestMapping ("/Indicadores")
-public class Indicadores {
+public class IndicadoresController {
 
     private IndicadoresService indicadoresService;
 
-    public Indicadores(IndicadoresService indicadoresService) {
+    public IndicadoresController(IndicadoresService indicadoresService) {
         super();
         this.indicadoresService = indicadoresService;
     }
 
     @GetMapping
     public List<Indicadores> getAllIndicIndicadores(){
-        return IndicadoresService.getAllIndicadores();
+        return indicadoresService.getAllIndicadores();
     }
 
 
     @GetMapping("{id}")
     public ResponseEntity<Indicadores> getIndicadoresById(@PathVariable long indicadoresId){
-        return new ResponseEntity<Indicadores>(IndicadoresService.getIndicadoresById(indicadoresId), HttpStatus.OK);
+        return new ResponseEntity<Indicadores>(indicadoresService.getIndicadoresById(indicadoresId), HttpStatus.OK);
     }
 
 
     @GetMapping("/nomes/{nome}")
     public ResponseEntity<List<Indicadores>> getIndicadoresByNome(@PathVariable("nome") String nome) {
-        return ResponseEntity.ok(IndicadoresService.getIndicadoresByNome(nome));
+        return ResponseEntity.ok(indicadoresService.getIndicadoresByNome(nome));
     }
 
     @PostMapping()
@@ -52,15 +53,15 @@ public class Indicadores {
 
     @PutMapping("{id}")
     public ResponseEntity<Indicadores> updateIndicadores(@PathVariable("id") long id
-            ,@RequestBody Indicadores Indicadores){
-        return new ResponseEntity<Indicadores>(IndicadoresService.updateIndicadores(Indicadores, id), HttpStatus.OK);
+            , @RequestBody Indicadores Indicadores){
+        return new ResponseEntity<Indicadores>(indicadoresService.updateIndicadores(Indicadores, id), HttpStatus.OK);
     }
 
 
     @DeleteMapping("{id}")
     public ResponseEntity<String> deleteIndicadores(@PathVariable("id") long id){
 
-        IndicadoresService.deleteIndicadores(id);
+        indicadoresService.deleteIndicadores(id);
         return new ResponseEntity<String>("Indicadores Deletados!.", HttpStatus.OK);
     }
 

@@ -1,6 +1,8 @@
 package br.com.empiricus.service;
 
 
+
+
 import br.com.empiricus.model.Ativos;
 
 import java.util.List;

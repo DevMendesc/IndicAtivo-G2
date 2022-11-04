@@ -1,5 +1,6 @@
 package br.com.empiricus.service.impl;
 
+
 import br.com.empiricus.model.Ativos;
 import br.com.empiricus.repository.AtivosRepository;
 import br.com.empiricus.service.AtivosService;
@@ -28,7 +29,7 @@ public class AtivosServiceImpl implements AtivosService {
 
 
     @Override
-    public java.util.List<Ativos> getAllAtivos() {
+    public List<Ativos> getAllAtivos() {
         return ativosRepository.findAll();
     }
 

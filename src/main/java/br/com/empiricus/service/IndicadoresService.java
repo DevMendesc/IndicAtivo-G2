@@ -11,7 +11,7 @@ public interface IndicadoresService {
     List<Indicadores> getAllIndicadores();
     List<Indicadores> getIndicadoresByNome(String nome);
     Indicadores getIndicadoresById(long id);
-    Indicadores saveIndicadores(br.com.empiricus.controller.Indicadores indicadores);
+    Indicadores saveIndicadores(Indicadores indicadores);
     Indicadores updateIndicadores(Indicadores indicadores, long id);
     void deleteIndicadores(long id);
 	void deleteIndicadores(String nome);

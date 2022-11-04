@@ -3,12 +3,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-import br.com.empiricus.entities.CalculaIndicadores;
-//BY DEBORAPAIVA
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,11 +18,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Indicadores extends CalculaIndicadores {
 
-	@ManyToOne
-    private Cliente cliente;
-	
-	@ManyToOne
-    private Ativos ativos;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,9 +26,7 @@ public class Indicadores extends CalculaIndicadores {
 
     @NotNull
     private String nome;
-    
-    
-    //INDICADORES - Objetivo puxar as informações do entities - classe CalculandoIndicadores
+
     
     @NotNull
     private Double plResult;

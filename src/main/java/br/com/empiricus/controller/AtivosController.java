@@ -27,8 +27,8 @@ public class AtivosController {
 
 
     @GetMapping("{id}")
-    public ResponseEntity<Ativos> getAtivosById(@PathVariable long ativosId){
-        return new ResponseEntity<Ativos>(ativosService.getAtivosById(ativosId), HttpStatus.OK);
+    public ResponseEntity<Ativos> getAtivosById(@PathVariable long id){
+        return new ResponseEntity<Ativos>(ativosService.getAtivosById(id), HttpStatus.OK);
     }
 
 

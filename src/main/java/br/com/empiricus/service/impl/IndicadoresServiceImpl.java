@@ -28,7 +28,7 @@ public class IndicadoresServiceImpl implements IndicadoresService {
 
 
     @Override
-    public java.util.List<Indicadores> getAllIndicadores() {
+    public List<Indicadores> getAllIndicadores() {
         return indicadoresRepository.findAll();
     }
 

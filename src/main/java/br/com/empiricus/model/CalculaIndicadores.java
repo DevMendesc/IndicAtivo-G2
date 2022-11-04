@@ -45,9 +45,5 @@ public class CalculaIndicadores {
 		return lpa;
 	}
 
-	public static Double margemLiquidaResult(double getLucroLiquido, double getReceitaLiquida) {
-		double margemLiquida = (getLucroLiquido / getReceitaLiquida) * 100;
-		return margemLiquida;
-	}
 
 }

@@ -2,7 +2,9 @@ package br.com.empiricus.controller;
 
 
 import br.com.empiricus.model.Ativos;
+import br.com.empiricus.model.Indicadores;
 import br.com.empiricus.service.AtivosService;
+import br.com.empiricus.service.IndicadoresService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +16,7 @@ import java.util.List;
 public class AtivosController {
 
     private AtivosService ativosService;
+    private IndicadoresService indicadoresService;
 
     public AtivosController(AtivosService ativosService) {
         super();
@@ -39,7 +42,7 @@ public class AtivosController {
 
     @PostMapping()
     public ResponseEntity<Ativos> saveAtivos(@RequestBody Ativos ativos){
-        return new ResponseEntity<Ativos>(ativosService.saveAtivos(ativos), HttpStatus.CREATED);
+        return new ResponseEntity<Ativos>(ativosService.saveAtivos(ativos ), HttpStatus.CREATED);
 
     }
 

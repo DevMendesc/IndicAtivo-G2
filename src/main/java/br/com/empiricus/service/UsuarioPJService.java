@@ -22,11 +22,15 @@ public class UsuarioPJService {
 
 	@Autowired
 	private UsuarioPJRepository repository;
+	
+	@Autowired
+    EmailService emailService;
 
 	public ClientePJ CadastrarUsuarioPJ(ClientePJ clientePJ) {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		String senhaEncoder = encoder.encode(clientePJ.getSenha());
 		clientePJ.setSenha(senhaEncoder);
+		emailService.enviarEmail(clientePJ.getEmail(), "Confirmação de cadastro", "O seu cadastro no IndicAtivos Foi realizado com sucesso!");
 		return repository.save(clientePJ);
 	}
 

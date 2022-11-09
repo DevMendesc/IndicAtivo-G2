@@ -83,8 +83,7 @@ public class IndicadoresServiceImpl implements IndicadoresService {
 
 	@Override
 	public void deleteIndicadores(String nome) {
-		  indicadoresRepository.findByNome(nome).orElseThrow(() ->
-          new ResourceNotFoundException("Indicadores", "Nome", nome));
+		  indicadoresRepository.findByNome(nome);
   indicadoresRepository.deleteByNome(nome);
 		
 	}

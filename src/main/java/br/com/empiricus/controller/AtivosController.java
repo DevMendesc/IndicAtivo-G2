@@ -46,17 +46,17 @@ public class AtivosController {
 
     }
 
-    @PutMapping("{id}")
-    public ResponseEntity<Ativos> updateAtivos(@PathVariable("id") long id
+    @PutMapping("{nome}")
+    public ResponseEntity<Ativos> updateAtivos(@PathVariable("nome") String nome
             ,@RequestBody Ativos ativos){
-        return new ResponseEntity<Ativos>(ativosService.updateAtivos(ativos, id), HttpStatus.OK);
+        return new ResponseEntity<Ativos>(ativosService.updateAtivosByNome(ativos, nome), HttpStatus.OK);
     }
 
 
-    @DeleteMapping("{id}")
-    public ResponseEntity<String> deleteAtivos(@PathVariable("id") long id){
+    @DeleteMapping("{nome}")
+    public ResponseEntity<String> deleteAtivos(@PathVariable("nome") String nome){
 
-        ativosService.deleteAtivos(id);
+        ativosService.deleteAtivos(nome);
         return new ResponseEntity<String>("Ativos Deletados!.", HttpStatus.OK);
     }
 

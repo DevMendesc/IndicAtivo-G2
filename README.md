@@ -11,6 +11,7 @@ Projeto Integrador da turma 07.2022 Code Tank Android e Kotlin - Digital House.
 Software Android Financeiro o aplicativo recebe informações das empresas cadastradas, calcula os indicadores e disponibiliza o relatório para os investidores.
 
 DIAGRAMA - https://www.figma.com/file/0SAZ3LKxGF43xB47FBtr5K/Diagrama-IndicAtivo?node-id=0%3A1
+
 DOCUMENTAÇÃO DA API - https://documenter.getpostman.com/view/16774640/2s8YekQEtg
 
 ## Desenvolvedores:

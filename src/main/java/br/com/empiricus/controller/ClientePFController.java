@@ -3,6 +3,7 @@ package br.com.empiricus.controller;
 //BY THIAGOSILVA
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -20,14 +21,10 @@ import br.com.empiricus.service.ClientePFService;
 @RestController
 @RequestMapping("/api/clientespf")
 public class ClientePFController {
-	
+
+	@Autowired
 	private ClientePFService clientePFService;
 
-	public ClientePFController(ClientePFService clientePFService) {
-		super();
-		this.clientePFService = clientePFService;
-	}
-	
 	
 	//CRIAÇÃO DE INSERÇÃO API REST CLIENTE
 	//http://localhost:8080/api/clientes

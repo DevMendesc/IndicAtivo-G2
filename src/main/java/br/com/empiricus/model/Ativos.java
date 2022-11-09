@@ -24,6 +24,7 @@ public class Ativos {
 
 
     @NotNull
+    @Column(unique = true)
     private String nome;
     @NotNull
     private Double lucroPorAcao;

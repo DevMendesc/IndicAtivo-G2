@@ -2,9 +2,12 @@ package br.com.empiricus.service.impl;
 
 
 import br.com.empiricus.model.Ativos;
+import br.com.empiricus.model.Indicadores;
 import br.com.empiricus.repository.AtivosRepository;
+import br.com.empiricus.repository.IndicadoresRepository;
 import br.com.empiricus.service.AtivosService;
 import br.com.empiricus.springboot.exception.ResourceNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -16,6 +19,10 @@ public class AtivosServiceImpl implements AtivosService {
 
     private AtivosRepository ativosRepository;
 
+    @Autowired
+    private IndicadoresRepository indicadoresRepository;
+
+
     public AtivosServiceImpl(AtivosRepository ativosRepository) {
         super();
         this.ativosRepository = ativosRepository;
@@ -24,6 +31,21 @@ public class AtivosServiceImpl implements AtivosService {
 
     @Override
     public Ativos saveAtivos(Ativos ativos) {
+
+        Indicadores indicadores = new Indicadores();
+
+        indicadores.setNome(ativos.getNome());
+        indicadores.setPl(Indicadores.plResult(ativos.getPrecoAcao(),ativos.getLucroPorAcao()));
+        indicadores.setRoe(Indicadores.roeResult(ativos.getLucroLiquido(),ativos.getPatrimonioLiquido()));
+        indicadores.setPvpa(Indicadores.pvpaResult(ativos.getPrecoAcao(),ativos.getValorPatrimonialPorAcao()));
+        indicadores.setEv(Indicadores.evResult(ativos.getCotacaoAcao(),ativos.getAcoesTotais(),ativos.getDividaTotal(),ativos.getCaixaEEquivalentes()));
+        indicadores.setEbitda(Indicadores.ebitdaResult(ativos.getLucroOperacionalLiquido(),ativos.getJuros(),ativos.getImpostos(),ativos.getDepreciacao(),ativos.getAmortizacao()));
+        indicadores.setEvebitda(Indicadores.evebitdaResult(ativos.getCotacaoAcao(),ativos.getAcoesTotais(),ativos.getDividaTotal(),ativos.getCaixaEEquivalentes(),ativos.getLucroOperacionalLiquido(),ativos.getJuros(),ativos.getImpostos(),ativos.getDepreciacao(),ativos.getAmortizacao()));
+        indicadores.setDividendYield(Indicadores.dividendYieldResult(ativos.getDividendo(),ativos.getPrecoAcao()));
+        indicadores.setLpa(Indicadores.lpaResult(ativos.getLucroLiquido(),ativos.getAcoesTotais()));
+
+        indicadoresRepository.save(indicadores);
+
         return ativosRepository.save(ativos);
     }
 

@@ -54,15 +54,14 @@ public class IndicadoresServiceImpl implements IndicadoresService {
                 () -> new ResourceNotFoundException("indicadores", "Id", id));
 
         existingindicadores.setNome(indicadores.getNome());
-        existingindicadores.setPlResult(indicadores.getPlResult());
-        existingindicadores.setRoeResult(indicadores.getRoeResult());
-        existingindicadores.setPvpaResult(indicadores.getPvpaResult());
-        existingindicadores.setEvResult(indicadores.getEvResult());
-        existingindicadores.setEbitdaResult(indicadores.getEbitdaResult());
-        existingindicadores.setEvebitdaResult(indicadores.getEvebitdaResult());
-        existingindicadores.setDividendYieldResult(indicadores.getDividendYieldResult());
-        existingindicadores.setLpaResult(indicadores.getLpaResult());
-        existingindicadores.setMargemLiquidaResult(indicadores.getMargemLiquidaResult());
+        existingindicadores.setPl(indicadores.getPl());
+        existingindicadores.setRoe(indicadores.getRoe());
+        existingindicadores.setPvpa(indicadores.getPvpa());
+        existingindicadores.setEv(indicadores.getEv());
+        existingindicadores.setEbitda(indicadores.getEbitda());
+        existingindicadores.setEvebitda(indicadores.getEvebitda());
+        existingindicadores.setDividendYield(indicadores.getDividendYield());
+        existingindicadores.setLpa(indicadores.getLpa());
         
         
         indicadoresRepository.save(existingindicadores);

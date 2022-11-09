@@ -29,30 +29,28 @@ public class Indicadores extends CalculaIndicadores {
 
     
     @NotNull
-    private Double plResult;
+    private Double pl;
     
     @NotNull
-    private Double roeResult;
+    private Double roe;
     
     @NotNull
-    private Double pvpaResult;
+    private Double pvpa;
    
     @NotNull
-    private Double evResult;
+    private Double ev;
    
     @NotNull
-    private Double ebitdaResult;
+    private Double ebitda;
     
     @NotNull
-    private Double evebitdaResult;
+    private Double evebitda;
     
     @NotNull
-    private Double dividendYieldResult; 
+    private Double dividendYield;
     
     @NotNull
-    private Double lpaResult;
-    
-    @NotNull
-    private Double margemLiquidaResult;
+    private Double lpa;
+
     
 }

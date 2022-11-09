@@ -22,11 +22,16 @@ public class UsuarioPFService {
 
 	@Autowired
 	private UsuarioPFRepository repository;
+	
+	
+	@Autowired
+    EmailService emailService;
 
 	public ClientePF CadastrarUsuarioPF(ClientePF clientePF) {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		String senhaEncoder = encoder.encode(clientePF.getSenha());
 		clientePF.setSenha(senhaEncoder);
+		emailService.enviarEmail(clientePF.getEmail(), "Confirmação de cadastro", "O seu cadastro no IndicAtivos Foi realizado com sucesso!");
 		return repository.save(clientePF);
 	}
 

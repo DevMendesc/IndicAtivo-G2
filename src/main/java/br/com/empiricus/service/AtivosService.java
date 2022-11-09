@@ -4,6 +4,7 @@ package br.com.empiricus.service;
 
 
 import br.com.empiricus.model.Ativos;
+import br.com.empiricus.model.Indicadores;
 
 import java.util.List;
 

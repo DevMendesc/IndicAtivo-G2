@@ -14,6 +14,8 @@ DIAGRAMA - https://www.figma.com/file/0SAZ3LKxGF43xB47FBtr5K/Diagrama-IndicAtivo
 
 DOCUMENTAÇÃO DA API - https://documenter.getpostman.com/view/16774640/2s8YekQEtg
 
+DIAGRAMA DE ENTIDADE - RELACIONAMENTO https://www.figma.com/file/jf9zO0pJ3tRbGHQbV8vAhc/Untitled?node-id=0%3A1
+
 ## Desenvolvedores:
 
  [<img src="https://avatars.githubusercontent.com/u/93719802?v=4" width=115>](https://github.com/deborapaiva)  [<img src="https://avatars.githubusercontent.com/u/108030855?v=4" width=115>](https://github.com/riziaraquelbra)  [<img src="https://avatars.githubusercontent.com/u/84872496?v=4" width=115>](https://github.com/ThiagoCamelo1999)  [<img src="https://avatars.githubusercontent.com/u/97401294?v=4" width=115>](https://github.com/Devmendesc) |

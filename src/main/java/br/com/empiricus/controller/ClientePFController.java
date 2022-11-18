@@ -19,7 +19,7 @@ import br.com.empiricus.model.ClientePF;
 import br.com.empiricus.service.ClientePFService;
 
 @RestController
-@RequestMapping("/api/clientespf")
+@RequestMapping("/clientespf")
 public class ClientePFController {
 
 	@Autowired

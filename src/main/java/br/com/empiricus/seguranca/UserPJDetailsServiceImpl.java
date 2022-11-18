@@ -12,8 +12,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import br.com.empiricus.model.ClientePF;
-import br.com.empiricus.repository.UsuarioPFRepository;
 
 @Service
 public class UserPJDetailsServiceImpl implements UserDetailsService {

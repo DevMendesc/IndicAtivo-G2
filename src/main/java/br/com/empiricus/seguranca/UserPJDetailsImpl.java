@@ -1,11 +1,15 @@
 package br.com.empiricus.seguranca;
 
 import java.util.Collection;
+import java.util.List;
 
+import br.com.empiricus.model.Role;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import br.com.empiricus.model.ClientePJ;
+
+import javax.persistence.*;
 
 public class UserPJDetailsImpl implements UserDetails{
 
@@ -13,6 +17,7 @@ public class UserPJDetailsImpl implements UserDetails{
 
 	private String userName;
 	private String password;
+
 		
 	public UserPJDetailsImpl(ClientePJ user) {
 		this.userName = user.getCnpj();

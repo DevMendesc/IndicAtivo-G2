@@ -1,5 +1,6 @@
 package br.com.empiricus.model;
 //BY THIAGOSILVA
+import javax.management.relation.Role;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -19,7 +20,8 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ClientePJ {
-	
+
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;

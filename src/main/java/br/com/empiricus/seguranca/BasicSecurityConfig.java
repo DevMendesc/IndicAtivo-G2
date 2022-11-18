@@ -1,5 +1,7 @@
 package br.com.empiricus.seguranca;
 
+import br.com.empiricus.model.ClientePF;
+import br.com.empiricus.model.ClientePJ;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -33,16 +35,16 @@ public class BasicSecurityConfig {
 		.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 		.and().csrf().disable()
 		.cors();
-		
-		
-		
-//		http.authorizeHttpRequests((auth) -> auth
-//				.antMatchers("/usuarios/logar/cpf").permitAll()
-//				.antMatchers("/usuarios/cadastrar/cpf").permitAll()
-//				.antMatchers("/usuarios/logar/cnpj").permitAll()
-//				.antMatchers("/usuarios/cadastrar/cnpj").permitAll()
-//				.antMatchers(HttpMethod.OPTIONS).permitAll()
-//				.anyRequest().authenticated()).httpBasic();
+
+
+
+		http.authorizeHttpRequests((auth) -> auth
+				.antMatchers("/usuarios/logar/cpf").permitAll()
+				.antMatchers("/usuarios/cadastrar/cpf").permitAll()
+				.antMatchers("/usuarios/logar/cnpj").permitAll()
+				.antMatchers("/usuarios/cadastrar/cnpj").permitAll()
+				.antMatchers(HttpMethod.OPTIONS).permitAll()
+				.anyRequest().authenticated()).httpBasic();
 		
 	return http.build();
 	}

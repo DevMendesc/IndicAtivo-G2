@@ -2,6 +2,8 @@ package br.com.empiricus.seguranca;
 
 import java.util.Optional;
 
+import br.com.empiricus.model.ClientePJ;
+import br.com.empiricus.repository.UsuarioPJRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,16 +21,32 @@ public class UserPFDetailsServiceImpl implements UserDetailsService {
 	@Autowired
 	private UsuarioPFRepository usuarioPFRepository;
 
+	@Autowired
+	private UsuarioPJRepository usuarioPJRepository;
+
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		
-		Optional<ClientePF> clientePF = usuarioPFRepository.findByCpf(username);
-		
-		if(clientePF.isPresent()) 
-					return new UserPFDetailsImpl(clientePF.get());
-				else 
-					throw new ResponseStatusException(HttpStatus.FORBIDDEN);
 
+		if (username.length() ==  11) {
+			Optional<ClientePF> clientePF = usuarioPFRepository.findByCpf(username);
+
+			if(clientePF.isPresent())
+				return new UserPFDetailsImpl(clientePF.get());
+			else
+				throw new ResponseStatusException(HttpStatus.FORBIDDEN);
+		}
+		else if (username.length() == 14) {
+			Optional<ClientePJ> clientePJ = usuarioPJRepository.findByCnpj(username);
+
+			if(clientePJ.isPresent())
+				return new UserPJDetailsImpl(clientePJ.get());
+			else
+				throw new ResponseStatusException(HttpStatus.FORBIDDEN);
+		}
+
+
+		return null;
 	}
+
 
 }

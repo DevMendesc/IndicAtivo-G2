@@ -40,7 +40,7 @@ public class BasicSecurityConfig {
 		.and().csrf().disable()
 		.cors();
 
-		
+
 		http.authorizeHttpRequests((auth) -> auth
 				.antMatchers("/usuarios/logar/cpf").permitAll()
 				.antMatchers("/usuarios/cadastrar/cpf").permitAll()

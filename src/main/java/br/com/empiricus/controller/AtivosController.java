@@ -2,9 +2,8 @@ package br.com.empiricus.controller;
 
 
 import br.com.empiricus.model.Ativos;
-import br.com.empiricus.model.Indicadores;
 import br.com.empiricus.service.AtivosService;
-import br.com.empiricus.service.IndicadoresService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,13 +14,9 @@ import java.util.List;
 @RequestMapping ("/Ativos")
 public class AtivosController {
 
+    @Autowired
     private AtivosService ativosService;
-    private IndicadoresService indicadoresService;
 
-    public AtivosController(AtivosService ativosService) {
-        super();
-        this.ativosService = ativosService;
-    }
 
     @GetMapping
     public List<Ativos> getAllAtivos(){
@@ -46,17 +41,17 @@ public class AtivosController {
 
     }
 
-    @PutMapping("{id}")
-    public ResponseEntity<Ativos> updateAtivos(@PathVariable("id") long id
+    @PutMapping("{nome}")
+    public ResponseEntity<Ativos> updateAtivos(@PathVariable("nome") String nome
             ,@RequestBody Ativos ativos){
-        return new ResponseEntity<Ativos>(ativosService.updateAtivos(ativos, id), HttpStatus.OK);
+        return new ResponseEntity<Ativos>(ativosService.updateAtivosByNome(ativos, nome), HttpStatus.OK);
     }
 
 
-    @DeleteMapping("{id}")
-    public ResponseEntity<String> deleteAtivos(@PathVariable("id") long id){
+    @DeleteMapping("{nome}")
+    public ResponseEntity<String> deleteAtivos(@PathVariable("nome") String nome){
 
-        ativosService.deleteAtivos(id);
+        ativosService.deleteAtivos(nome);
         return new ResponseEntity<String>("Ativos Deletados!.", HttpStatus.OK);
     }
 

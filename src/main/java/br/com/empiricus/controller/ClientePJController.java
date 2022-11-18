@@ -3,6 +3,7 @@ package br.com.empiricus.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -20,13 +21,10 @@ import br.com.empiricus.service.ClientePJService;
 @RestController
 @RequestMapping("/Clientespj")
 public class ClientePJController {
-	
+
+	@Autowired
 	private ClientePJService clientePJService;
 
-	public ClientePJController(ClientePJService clientePJService) {
-		super();
-		this.clientePJService = clientePJService;
-	}
 
 	@PostMapping()
 	public ResponseEntity<ClientePJ> saveCliente(@RequestBody ClientePJ clientePJ){

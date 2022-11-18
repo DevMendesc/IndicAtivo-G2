@@ -10,5 +10,7 @@ import java.util.List;
 public interface AtivosRepository extends JpaRepository <Ativos, Long>{
 
     public List<Ativos> findByNomeContainingIgnoreCase(String nome);
+    public Ativos findByNome(String nome);
 
+    void deleteByNome(String nome);
 }

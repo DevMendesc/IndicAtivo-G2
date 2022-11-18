@@ -15,6 +15,6 @@ public interface AtivosService {
     List<Ativos> getAtivosByNome(String nome);
     Ativos getAtivosById(long id);
     Ativos saveAtivos(Ativos ativos);
-    Ativos updateAtivos(Ativos cliente, long id);
-    void deleteAtivos(long id);
+    Ativos updateAtivosByNome(Ativos cliente,String nome);
+    void deleteAtivos(String nome);
 }

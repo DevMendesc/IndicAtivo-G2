@@ -5,6 +5,7 @@ import java.util.List;
 
 import br.com.empiricus.model.Indicadores;
 import br.com.empiricus.service.IndicadoresService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -21,12 +22,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping ("/Indicadores")
 public class IndicadoresController {
 
+    @Autowired
     private IndicadoresService indicadoresService;
 
-    public IndicadoresController(IndicadoresService indicadoresService) {
-        super();
-        this.indicadoresService = indicadoresService;
-    }
 
     @GetMapping
     public List<Indicadores> getAllIndicIndicadores(){
@@ -45,7 +43,7 @@ public class IndicadoresController {
         return ResponseEntity.ok(indicadoresService.getIndicadoresByNome(nome));
     }
 
-    @PostMapping()
+ /*   @PostMapping()
     public ResponseEntity<Indicadores> saveIndicadores(@RequestBody Indicadores indicadores){
         return new ResponseEntity<Indicadores>(indicadoresService.saveIndicadores(indicadores), HttpStatus.CREATED);
 
@@ -64,6 +62,6 @@ public class IndicadoresController {
         indicadoresService.deleteIndicadores(id);
         return new ResponseEntity<String>("Indicadores Deletados!.", HttpStatus.OK);
     }
-
+*/
 
 }

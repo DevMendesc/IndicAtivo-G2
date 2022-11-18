@@ -16,7 +16,7 @@ public interface IndicadoresRepository extends JpaRepository <Indicadores, Strin
 
 	public void deleteById(long id);
 
-	public Optional<Indicadores> findByNome(String nome);
+	public Indicadores findByNome(String nome);
 
 	public void deleteByNome(String nome);
 

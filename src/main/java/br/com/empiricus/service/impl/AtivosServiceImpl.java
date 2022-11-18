@@ -71,10 +71,11 @@ public class AtivosServiceImpl implements AtivosService {
 
 
     @Override
-    public Ativos updateAtivos(Ativos ativos, long id) {
+    public Ativos updateAtivosByNome(Ativos ativos, String nome) {
 
-        Ativos existingAtivos = ativosRepository.findById(id).orElseThrow(
-                () -> new ResourceNotFoundException("Ativos", "Id", id));
+        Ativos existingAtivos = ativosRepository.findByNome(nome);
+
+        Indicadores indicadores = indicadoresRepository.findByNome(nome);
 
         existingAtivos.setNome(ativos.getNome());
         existingAtivos.setLucroPorAcao(ativos.getLucroPorAcao());
@@ -94,6 +95,18 @@ public class AtivosServiceImpl implements AtivosService {
         existingAtivos.setAmortizacao(ativos.getAmortizacao());
         existingAtivos.setDividendo(ativos.getDividendo());
 
+        indicadores.setNome(ativos.getNome());
+        indicadores.setPl(Indicadores.plResult(ativos.getPrecoAcao(),ativos.getLucroPorAcao()));
+        indicadores.setRoe(Indicadores.roeResult(ativos.getLucroLiquido(),ativos.getPatrimonioLiquido()));
+        indicadores.setPvpa(Indicadores.pvpaResult(ativos.getPrecoAcao(),ativos.getValorPatrimonialPorAcao()));
+        indicadores.setEv(Indicadores.evResult(ativos.getCotacaoAcao(),ativos.getAcoesTotais(),ativos.getDividaTotal(),ativos.getCaixaEEquivalentes()));
+        indicadores.setEbitda(Indicadores.ebitdaResult(ativos.getLucroOperacionalLiquido(),ativos.getJuros(),ativos.getImpostos(),ativos.getDepreciacao(),ativos.getAmortizacao()));
+        indicadores.setEvebitda(Indicadores.evebitdaResult(ativos.getCotacaoAcao(),ativos.getAcoesTotais(),ativos.getDividaTotal(),ativos.getCaixaEEquivalentes(),ativos.getLucroOperacionalLiquido(),ativos.getJuros(),ativos.getImpostos(),ativos.getDepreciacao(),ativos.getAmortizacao()));
+        indicadores.setDividendYield(Indicadores.dividendYieldResult(ativos.getDividendo(),ativos.getPrecoAcao()));
+        indicadores.setLpa(Indicadores.lpaResult(ativos.getLucroLiquido(),ativos.getAcoesTotais()));
+
+        indicadoresRepository.save(indicadores);
+
 
         ativosRepository.save(existingAtivos);
         return existingAtivos;
@@ -103,11 +116,14 @@ public class AtivosServiceImpl implements AtivosService {
 
 
     @Override
-    public void deleteAtivos(long id) {
+    public void deleteAtivos(String nome) {
 
-        ativosRepository.findById(id).orElseThrow(() ->
-                new ResourceNotFoundException("Ativos", "Id", id));
-        ativosRepository.deleteById(id);
+
+        indicadoresRepository.findByNome(nome);
+        ativosRepository.findByNome(nome);
+
+        indicadoresRepository.deleteByNome(nome);
+        ativosRepository.deleteByNome(nome);
 
     }
 }

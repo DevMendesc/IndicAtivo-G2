@@ -20,7 +20,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping ("/ativos")
-@Tag(name = "Ativos", description = "Controller para requisições Ativos -> variáveis para cálculo")
+@Tag(name = "ativos", description = "Controller para requisições Ativos -> variáveis para cálculo")
 @SecurityRequirement(name = "Bearer Authentication")
 public class AtivosController {
 

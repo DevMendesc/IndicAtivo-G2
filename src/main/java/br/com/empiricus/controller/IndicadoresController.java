@@ -28,8 +28,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping ("/Indicadores")
-@Tag(name = "Indicadores", description = "Controller para requisições Indicadores -> variáveis para verificações indicadores")
+@RequestMapping ("/indicadores")
+@Tag(name = "indicadores", description = "Controller para requisições Indicadores -> variáveis para verificações indicadores")
 @SecurityRequirement(name = "Bearer Authentication")
 public class IndicadoresController {
 
@@ -41,7 +41,7 @@ public class IndicadoresController {
     @Operation(
     		summary = ("Apresentação de Indicadores"),
     		description = ("Apresenta todos indicadores"),
-    		tags = {"Indicadores"}, 
+    		tags = {"indicadores"},
     		responses = {
     				@ApiResponse(description = "Online", responseCode = "200", 
     						content = @Content(mediaType = "application/json",
@@ -57,7 +57,7 @@ public class IndicadoresController {
     @Operation(
     		summary = ("Apresentação de Indicadores através do id"),
     		description = ("Apresenta os indicadores cadastrados através do id"),
-    		tags = {"Indicadores"}, 
+    		tags = {"indicadores"},
     		responses = {
     				@ApiResponse(description = "Online", responseCode = "200", 
     						content = @Content(mediaType = "application/json",
@@ -73,7 +73,7 @@ public class IndicadoresController {
     @Operation(
     		summary = ("Apresentação de Indicadores através do nome"),
     		description = ("Apresenta os indicadores cadastrados através do nome"),
-    		tags = {"Indicadores"}, 
+    		tags = {"indicadores"},
     		responses = {
     				@ApiResponse(description = "Online", responseCode = "200", 
     						content = @Content(mediaType = "application/json",
@@ -83,26 +83,4 @@ public class IndicadoresController {
     public ResponseEntity<List<Indicadores>> getIndicadoresByNome(@PathVariable("nome") String nome) {
         return ResponseEntity.ok(indicadoresService.getIndicadoresByNome(nome));
     }
-
- /*   @PostMapping()
-    public ResponseEntity<Indicadores> saveIndicadores(@RequestBody Indicadores indicadores){
-        return new ResponseEntity<Indicadores>(indicadoresService.saveIndicadores(indicadores), HttpStatus.CREATED);
-
-    }
-
-    @PutMapping("{id}")
-    public ResponseEntity<Indicadores> updateIndicadores(@PathVariable("id") long id
-            , @RequestBody Indicadores Indicadores){
-        return new ResponseEntity<Indicadores>(indicadoresService.updateIndicadores(Indicadores, id), HttpStatus.OK);
-    }
-
-
-    @DeleteMapping("{id}")
-    public ResponseEntity<String> deleteIndicadores(@PathVariable("id") long id){
-
-        indicadoresService.deleteIndicadores(id);
-        return new ResponseEntity<String>("Indicadores Deletados!.", HttpStatus.OK);
-    }
-*/
-
 }

@@ -6,7 +6,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
-import br.com.empiricus.model.ClientePJ;
+import br.com.empiricus.model.UserLoginPJ;
 import br.com.empiricus.repository.UserPJRepository;
 import br.com.empiricus.service.UserPJService.UserrPJService;
 import br.com.empiricus.springboot.exception.ResourceNotFoundException;
@@ -25,28 +25,28 @@ public class UserPJServiceImpl implements UserrPJService {
 
 
 	@Override
-	public ClientePJ saveUserPJ(ClientePJ userLoginPJ) {
+	public UserLoginPJ saveUserPJ(UserLoginPJ userLoginPJ) {
 		return userPJRepository.save(userLoginPJ);
 	}
 
 
 	@Override
-	public java.util.List<ClientePJ> getAllUserPJ() {
+	public java.util.List<UserLoginPJ> getAllUserPJ() {
 		return userPJRepository.findAll();
 	}
 
 
 	@Override
-	public ClientePJ getUserPJById(long id) {
+	public UserLoginPJ getUserPJById(long id) {
 		return userPJRepository.findById(id).orElseThrow(() -> 
 						new ResourceNotFoundException("Cliente", "Id", id));
 	}
 
 
 	@Override
-	public ClientePJ updateUserPJ(ClientePJ userLoginPJ, long id) {
+	public UserLoginPJ updateUserPJ(UserLoginPJ userLoginPJ, long id) {
 		// VERIFICAR SE O ID EXISTE DENTRO DO BD
-		ClientePJ existingUserLoginPJ = userPJRepository.findById(id).orElseThrow(
+		UserLoginPJ existingUserLoginPJ = userPJRepository.findById(id).orElseThrow(
 				() -> new ResourceNotFoundException("Cliente", "Id", id));
 		
 		existingUserLoginPJ.setTelefone(userLoginPJ.getTelefone());	

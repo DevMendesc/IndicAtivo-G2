@@ -31,7 +31,10 @@ public class EmailService {
             return "Email Enviado";
         } catch (MailException e){
             return "Erro ao enviar o email";
-        } 
+        }
+
+        //TODO Tratar erro de envio de email mesmo com erro de criação de conta. (Debora ficou resonsavel)
+
 	}
 }
 

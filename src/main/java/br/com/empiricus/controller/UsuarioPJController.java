@@ -1,7 +1,6 @@
 package br.com.empiricus.controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,15 +9,13 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.empiricus.model.Ativos;
-import br.com.empiricus.model.ClientePJ;
-import br.com.empiricus.service.UserPJService;
+import br.com.empiricus.model.UserLoginPJ;
 import br.com.empiricus.service.UserPJService.UserrPJService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
@@ -26,9 +23,7 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 
-@SecurityRequirement(name = "Bearer Authentication")
 @RestController
 @RequestMapping("/usuarios/PJ")
 @Tag(name = "Usuarios pj", description = "Controller para requisições Usuarios -> variáveis para verificações usuarios")
@@ -49,7 +44,7 @@ public class UsuarioPJController {
     						array = @ArraySchema(schema = @Schema(implementation = Ativos.class))
     						)) }
     		)
-	public List<ClientePJ> getAllUserPJ(){
+	public List<UserLoginPJ> getAllUserPJ(){
 		return userrPJService.getAllUserPJ();
 	}
 	
@@ -65,8 +60,8 @@ public class UsuarioPJController {
     						array = @ArraySchema(schema = @Schema(implementation = Ativos.class))
     						)) }
     		)
-	public ResponseEntity<ClientePJ> getUserPJById(@PathVariable("id") long clientePJid){
-		return new ResponseEntity<ClientePJ>(userrPJService.getUserPJById(clientePJid), HttpStatus.OK);
+	public ResponseEntity<UserLoginPJ> getUserPJById(@PathVariable("id") long clientePJid){
+		return new ResponseEntity<UserLoginPJ>(userrPJService.getUserPJById(clientePJid), HttpStatus.OK);
 	}
 
 	@PutMapping("{id}")
@@ -80,9 +75,9 @@ public class UsuarioPJController {
     						array = @ArraySchema(schema = @Schema(implementation = Ativos.class))
     						)) }
     		)
-	public ResponseEntity<ClientePJ> updateUserPJ(@PathVariable("id") long id
-												,@RequestBody ClientePJ userLoginPJ){
-		return new ResponseEntity<ClientePJ>(userrPJService.updateUserPJ(userLoginPJ, id), HttpStatus.OK);
+	public ResponseEntity<UserLoginPJ> updateUserPJ(@PathVariable("id") long id
+												, @RequestBody UserLoginPJ userLoginPJ){
+		return new ResponseEntity<UserLoginPJ>(userrPJService.updateUserPJ(userLoginPJ, id), HttpStatus.OK);
 	}
 	
 

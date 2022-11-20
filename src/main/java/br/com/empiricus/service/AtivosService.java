@@ -1,7 +1,7 @@
 package br.com.empiricus.service;
 
 import br.com.empiricus.model.Ativos;
-import br.com.empiricus.model.ClientePJ;
+import br.com.empiricus.model.UserLoginPJ;
 import br.com.empiricus.model.Indicadores;
 import br.com.empiricus.repository.AtivosRepository;
 import br.com.empiricus.repository.IndicadoresRepository;
@@ -29,12 +29,12 @@ public class AtivosService {
     private IndicadoresRepository indicadoresRepository;
 
     public List<Ativos> getAllAtivos(String username) {
-        ClientePJ pj = userPJRepository.findByCnpj(username).orElseThrow(RuntimeException::new);
+        UserLoginPJ pj = userPJRepository.findByCnpj(username).orElseThrow(RuntimeException::new);
         return pj.getAtivos();
     }
 
     public Ativos saveAtivos(Ativos ativos, String username) {
-        ClientePJ pj = userPJRepository.findByCnpj(username).orElseThrow(RuntimeException::new);
+        UserLoginPJ pj = userPJRepository.findByCnpj(username).orElseThrow(RuntimeException::new);
 
         Indicadores indicadores = new Indicadores();
 

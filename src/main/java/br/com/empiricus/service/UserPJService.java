@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import br.com.empiricus.model.ClientePJ;
+import br.com.empiricus.model.UserLoginPJ;
 import br.com.empiricus.repository.UserPJRepository;
 
 
@@ -21,20 +21,20 @@ public class UserPJService {
 	
 	
 	public interface UserrPJService {
-		ClientePJ saveUserPJ(ClientePJ clientePJ);//METODO  POST
-		List<ClientePJ> getAllUserPJ(); //METODO GET ALL (PESQUISA TODA TABELO)
-		ClientePJ getUserPJById(long id); //METODO GET POR ID
-		ClientePJ updateUserPJ(ClientePJ clientePJ, long id); //METODO PUT 
+		UserLoginPJ saveUserPJ(UserLoginPJ userLoginPJ);//METODO  POST
+		List<UserLoginPJ> getAllUserPJ(); //METODO GET ALL (PESQUISA TODA TABELO)
+		UserLoginPJ getUserPJById(long id); //METODO GET POR ID
+		UserLoginPJ updateUserPJ(UserLoginPJ userLoginPJ, long id); //METODO PUT
 		void deleteUserPJ(long id); //METODO DELETE
 	}
 
 
-	public ClientePJ CadastrarUserPJ(ClientePJ clientePJ) {
+	public UserLoginPJ CadastrarUserPJ(UserLoginPJ userLoginPJ) {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-		String senhaEncoder = encoder.encode(clientePJ.getSenha());
-		clientePJ.setSenha(senhaEncoder);
-		emailService.enviarEmail(clientePJ.getEmail(), "Confirmação de cadastro", "O seu cadastro no IndicAtivos Foi realizado com sucesso!");
-		return repository.save(clientePJ);
+		String senhaEncoder = encoder.encode(userLoginPJ.getSenha());
+		userLoginPJ.setSenha(senhaEncoder);
+		emailService.enviarEmail(userLoginPJ.getEmail(), "Confirmação de cadastro", "O seu cadastro no IndicAtivos Foi realizado com sucesso!");
+		return repository.save(userLoginPJ);
 	}
 
 }

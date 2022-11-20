@@ -19,8 +19,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping ("/ativos")
-@Tag(name = "ativos", description = "Controller para requisições Ativos -> variáveis para cálculo")
+@RequestMapping ("/Ativos")
+@Tag(name = "Ativos", description = "Controller para requisições Ativos -> variáveis para cálculo")
 @SecurityRequirement(name = "Bearer Authentication")
 public class AtivosController {
 
@@ -35,7 +35,7 @@ public class AtivosController {
     @Operation(
     		summary = ("Apresentação de Ativos"),
     		description = ("Apresenta os ativos cadastrados pela empresa responsável"),
-    		tags = {"ativos"}, 
+    		tags = {"Ativos"}, 
     		responses = {
     				@ApiResponse(description = "Online", responseCode = "200", 
     						content = @Content(mediaType = "application/json",
@@ -52,7 +52,7 @@ public class AtivosController {
     @Operation(
     		summary = ("Apresentação de Ativos por id"),
     		description = ("Apresenta os ativos cadastrados pela empresa responsável através do id do ativo"),
-    		tags = {"ativos"}, 
+    		tags = {"Ativos"}, 
     		responses = {
     				@ApiResponse(description = "Online", responseCode = "200", 
     						content = @Content(mediaType = "application/json",
@@ -68,7 +68,7 @@ public class AtivosController {
     @Operation(
     		summary = ("Apresentação de Ativos por nome"),
     		description = ("Apresenta os ativos cadastrados pela empresa responsável através do nome do ativo"),
-    		tags = {"ativos"}, 
+    		tags = {"Ativos"}, 
     		responses = {
     				@ApiResponse(description = "Online", responseCode = "200", 
     						content = @Content(mediaType = "application/json",
@@ -84,7 +84,7 @@ public class AtivosController {
     @Operation(
     		summary = ("Cadastro dos Ativos"),
     		description = ("Cadastro dos ativos pela empresa responsável"),
-    		tags = {"ativos"}, 
+    		tags = {"Ativos"}, 
     		responses = {
     				@ApiResponse(description = "Online", responseCode = "200", 
     						content = @Content(mediaType = "application/json",
@@ -100,7 +100,7 @@ public class AtivosController {
     @Operation(
     		summary = ("Atualização dos Ativos atravéz do nome"),
     		description = ("Atualização dos ativos cadastrados pela empresa responsável através do nome do ativo"),
-    		tags = {"ativos"}, 
+    		tags = {"Ativos"}, 
     		responses = {
     				@ApiResponse(description = "Online", responseCode = "200", 
     						content = @Content(mediaType = "application/json",
@@ -117,7 +117,7 @@ public class AtivosController {
     @Operation(
     		summary = ("Exclusão dos Ativos atravéz do nome"),
     		description = ("Exclusão dos ativos cadastrados pela empresa responsável através do nome do ativo"),
-    		tags = {"ativos"}, 
+    		tags = {"Ativos"}, 
     		responses = {
     				@ApiResponse(description = "Online", responseCode = "200", 
     						content = @Content(mediaType = "application/json",

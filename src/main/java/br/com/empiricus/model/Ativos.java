@@ -2,12 +2,8 @@ package br.com.empiricus.model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -60,9 +56,9 @@ public class Ativos {
 
     @ManyToOne
     @JsonIgnoreProperties("ativos")
-    @Schema(hidden = true)
+    @Schema(hidden = false)
   
-	private ClientePJ userLoginPJ;
+	private UserLoginPJ userLoginPJ;
 
     /*@JsonProperty("userLoginPJ") private void unpackNested(Long userLoginPJId) {
         this.userLoginPJ = new ClientePJ(); userLoginPJ.setId(userLoginPJId);
@@ -212,11 +208,11 @@ public class Ativos {
 		this.dividendo = dividendo;
 	}
 
-	public ClientePJ getUserLoginPJ() {
+	public UserLoginPJ getUserLoginPJ() {
 		return userLoginPJ;
 	}
 
-	public void setUserLoginPJ(ClientePJ userLoginPJ) {
+	public void setUserLoginPJ(UserLoginPJ userLoginPJ) {
 		this.userLoginPJ = userLoginPJ;
 	}
 

@@ -6,7 +6,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
-import br.com.empiricus.model.ClientePF;
+import br.com.empiricus.model.UserLoginPF;
 import br.com.empiricus.repository.UserPFRepository;
 import br.com.empiricus.service.UserPFService.UserrPFService;
 import br.com.empiricus.springboot.exception.ResourceNotFoundException;
@@ -25,38 +25,38 @@ public class UserPFServiceImpl implements UserrPFService {
 
 
 	@Override
-	public ClientePF saveUserPF(ClientePF userLoginPF) {
+	public UserLoginPF saveUserPF(UserLoginPF userLoginPF) {
 		return userPFRepository.save(userLoginPF);
 	}
 
 
 	@Override
-	public java.util.List<ClientePF> getAllUserPF() {
+	public java.util.List<UserLoginPF> getAllUserPF() {
 		return userPFRepository.findAll();
 	}
 
 
 	@Override
-	public ClientePF getUserPFById(long id) {
+	public UserLoginPF getUserPFById(long id) {
 		return userPFRepository.findById(id).orElseThrow(() -> 
 						new ResourceNotFoundException("Cliente", "Id", id));
 	}
 
 
 	@Override
-	public ClientePF updateUserPF(ClientePF userLoginPF, long id) {
+	public UserLoginPF updateUserPF(UserLoginPF userLoginPF, long id) {
 		// VERIFICAR SE O ID EXISTE DENTRO DO BD
-		ClientePF existingClientePF = userPFRepository.findById(id).orElseThrow(
+		UserLoginPF existingUserLoginPF = userPFRepository.findById(id).orElseThrow(
 				() -> new ResourceNotFoundException("Cliente", "Id", id));
 		
-		existingClientePF.setNome(userLoginPF.getNome());	
-		existingClientePF.setSobreNome(userLoginPF.getSobreNome());
-		existingClientePF.setEmail(userLoginPF.getEmail());
-		existingClientePF.setCpf(userLoginPF.getCpf());
-		existingClientePF.setTelefone(userLoginPF.getTelefone());
+		existingUserLoginPF.setNome(userLoginPF.getNome());
+		existingUserLoginPF.setSobreNome(userLoginPF.getSobreNome());
+		existingUserLoginPF.setEmail(userLoginPF.getEmail());
+		existingUserLoginPF.setCpf(userLoginPF.getCpf());
+		existingUserLoginPF.setTelefone(userLoginPF.getTelefone());
 		//SALVAR FUNCIONARIO EXISTENTE NO BD
-		userPFRepository.save(existingClientePF);
-		return existingClientePF;
+		userPFRepository.save(existingUserLoginPF);
+		return existingUserLoginPF;
 		
 		
 	}

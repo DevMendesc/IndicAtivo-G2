@@ -29,7 +29,6 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @RequestMapping("/usuarios/PF")
 @Tag(name = "Usuarios PF", description = "Controller para requisições Usuarios -> variáveis para verificações usuarios")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-@SecurityRequirement(name = "Bearer Authentication")
 public class UsuarioPFController {
 	
 	

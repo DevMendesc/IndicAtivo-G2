@@ -26,8 +26,9 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 
-
+@SecurityRequirement(name = "Bearer Authentication")
 @RestController
 @RequestMapping("/usuarios/PJ")
 @Tag(name = "Usuarios pj", description = "Controller para requisições Usuarios -> variáveis para verificações usuarios")

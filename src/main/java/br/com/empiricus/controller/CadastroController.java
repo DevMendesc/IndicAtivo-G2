@@ -23,7 +23,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
 @RequestMapping("/cadastrar")
-@Tag(name = "cadastro de Usuario", description = "Controller para requisições de cadastro -> variáveis para cadastro")
+@Tag(name = "cadastrar", description = "Controller para requisições de cadastro -> variáveis para cadastro")
 public class CadastroController {
 	
 	
@@ -38,7 +38,7 @@ public class CadastroController {
 	@Operation(
     		summary = ("Cadastro de usuario Cnpj"),
     		description = ("Cadastro de usuario cnpj / pessoa juridica"),
-    		tags = {"Cadastro"}, 
+    		tags = {"cadastrar"}, 
     		responses = {
     				@ApiResponse(description = "Online", responseCode = "200", 
     						content = @Content(mediaType = "application/json",
@@ -55,7 +55,7 @@ public class CadastroController {
 	@Operation(
     		summary = ("Cadastro de usuario Cpf"),
     		description = ("Cadastro de usuario cpf / pessoa fisica"),
-    		tags = {"Cadastro"}, 
+    		tags = {"cadastrar"}, 
     		responses = {
     				@ApiResponse(description = "Online", responseCode = "200", 
     						content = @Content(mediaType = "application/json",

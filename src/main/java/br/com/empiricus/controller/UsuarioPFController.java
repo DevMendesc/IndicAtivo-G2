@@ -27,7 +27,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 
 @SecurityRequirement(name = "Bearer Authentication")
 @RestController
-@RequestMapping("/usuarios/PF")
+@RequestMapping("/usuarios/pf")
 @Tag(name = "Usuarios PF", description = "Controller para requisições Usuarios -> variáveis para verificações usuarios")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class UsuarioPFController {
@@ -57,7 +57,7 @@ public class UsuarioPFController {
 		@Operation(
 	    		summary = ("Apresentação dos usuarios atavéz do id"),
 	    		description = ("Apresenta os usuarios cadastrados atravéz do id"),
-	    		tags = {"Usuarios PF"}, 
+	    		tags = {"Usuarios PF"},
 	    		responses = {
 	    				@ApiResponse(description = "Online", responseCode = "200", 
 	    						content = @Content(mediaType = "application/json",
@@ -73,7 +73,7 @@ public class UsuarioPFController {
 		@Operation(
 	    		summary = ("Atualização dos usuarios atavéz do id"),
 	    		description = ("Atualização dos usuarios cadastrados atravéz do id"),
-	    		tags = {"Usuarios PF"}, 
+	    		tags = {"Usuarios PF"},
 	    		responses = {
 	    				@ApiResponse(description = "Online", responseCode = "200", 
 	    						content = @Content(mediaType = "application/json",

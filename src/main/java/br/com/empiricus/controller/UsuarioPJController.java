@@ -26,7 +26,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 @SecurityRequirement(name = "Bearer Authentication")
 @RestController
-@RequestMapping("/usuarios/PJ")
+@RequestMapping("/usuarios/pj")
 @Tag(name = "Usuarios pj", description = "Controller para requisições Usuarios -> variáveis para verificações usuarios")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class UsuarioPJController {
